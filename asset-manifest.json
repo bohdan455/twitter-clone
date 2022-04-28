@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.8f405cda.css",
+    "main.js": "/react-gh-pages/static/js/main.3313ed27.js",
+    "static/media/profile-logo.jpg": "/react-gh-pages/static/media/profile-logo.5fc93259bf9717d64e62.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.8f405cda.css.map": "/react-gh-pages/static/css/main.8f405cda.css.map",
+    "main.3313ed27.js.map": "/react-gh-pages/static/js/main.3313ed27.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f405cda.css",
+    "static/js/main.3313ed27.js"
+  ]
+}
