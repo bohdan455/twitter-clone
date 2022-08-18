@@ -15,12 +15,12 @@ const Comment = ({text,}) => {
             <div className="comment-text">
             {text}
             </div>
-            {/* <ul className="comment-actions">
+            <ul className="comment-actions">
                 <li><img src={require('../images/comment-btn/Comment.png')} alt="comment" />0</li>
                 <li><img src={require('../images/comment-btn/Retweet.png')} alt="retweet" />0</li>
                 <li><img src={require('../images/comment-btn/Like.png')} alt="like" />0</li>
                 <li><img src={require("../images/comment-btn/Share.png")} alt="share" /></li>
-            </ul> */}
+            </ul>
         </div>
     </div> 
     );

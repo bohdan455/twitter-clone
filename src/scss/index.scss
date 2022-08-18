@@ -5,286 +5,332 @@ $black: #14171A;
 $grey: #77858F;
 
 
-@mixin FontSetting ($size, $color, $weight:400){
-    font-family: 'Montserrat', sans-serif;
-    color: $color;
-    font-size: $size;
-    font-weight: $weight;
-}
-@mixin TweetBtn($width,$height) {
-    width: $width;
-    height: $height;
-    border-radius: 25px;
-    background-color: #1DA1F2;
-    border: none;
-    color: white;
-    cursor: pointer;
-    @include FontSetting(15px,white ,700 )
+@mixin FontSetting($size, $color, $weight:400) {
+  font-family: 'Montserrat', sans-serif;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
 }
 
+@mixin TweetBtn($width,$height) {
+  width: $width;
+  height: $height;
+  border-radius: 25px;
+  background-color: #1DA1F2;
+  border: none;
+  color: white;
+  cursor: pointer;
+  @include FontSetting(15px, white, 700)
+}
 
 $border-color: #E6ECF0;
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-.app{
+.app {
   width: 1200px;
   margin: 0 auto;
   display: flex;
-  padding: 0px 20px;
+  padding: 0 20px;
   min-height: 100vh;
 }
-.content{
-    width: 600px;
-    border-right: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    padding-top: 15px;
-}
-header{
-    padding-top: 15px;
-    width: 250px;
-    height: 100%;
-    ul{
-        width: 200px;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 500px;
-        .nav-item{
-            position: relative;
-            @include FontSetting(19px, $black, 700 );
-            display: flex;
-            align-items: center;
-        }
-    }
-    .nav-text{
-        cursor: pointer;
-        position: absolute;
-        left: 40px;
-        &:hover{
-            color: #1DA1F2;
-        }
-        .active{
-            color: #1DA1F2;
-        }
-    }
-    .tweet-btn{
-        @include TweetBtn(100%, 50px);
-    }
-}
-.home{
-    width: 100%;
-    .top-section{
-        display: flex;
-        justify-content: space-between;
-        align-self: center;
-    }  
-}
-.top-section{
-    padding: 15px 16px;
-    @include FontSetting(20px, $black , 700);
-}
-.comment-container{
-    width: 100%;
-    border-bottom: 1px solid $border-color;
-    min-height: 120px;
 
-    position: relative;
+.content {
+  width: 600px;
+  border-right: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  padding-top: 15px;
+}
 
-    .input-area{
-        display: flex;
-        margin-top: 4px;
-        margin-left: 16px;
-        position: absolute;
-        width: 90%;
+header {
+  padding-top: 15px;
+  width: 250px;
+  height: 100%;
 
-        img{
-            margin-right: 12px;
-        }
-        input{
-            border: none;
-            outline: none;
-            @include FontSetting(20px,$grey ,400);
-            width: 100%;
-        }
-    }
-    .comment-btn{
-        @include TweetBtn(79px, 36px);
-        position: absolute;
-        right: 15px;
-        bottom: 5px;
-
-    }
-}
-.comment{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px 16px;
-    border-bottom: 1px solid $border-color;
-    display: flex;
-    img{
-        height: 50px;
-        width: 50px;
-    }
-}
-.comment-value{
-    margin-left: 12px;
-}
-.comment-info{
-    display: flex;
-    align-items: flex-end;
-    .user-id{
-        margin-left: 10px;
-    }
-}
-.user-name{
-    @include FontSetting($black,15px ,700 );
-    line-height: 15px
-}
-.user-id{
-    @include FontSetting(15px, $grey,300 );
-}
-.comment-text{
-    @include FontSetting(#141619,15px ,400 );
-    line-height: 18px;
-    margin-top: 5px;
-    margin-bottom: 12px;
-    max-width: 90%;
-}
-.comment-actions{
-    width: 400px;
+  ul {
+    width: 200px;
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    img{
-        height: 15px;
-        width: 15px;
-        margin-right: 5px;
-        cursor: pointer;
+    height: 500px;
+
+    .nav-item {
+      position: relative;
+      @include FontSetting(19px, $black, 700);
+      display: flex;
+      align-items: center;
     }
-    li{
-        display: flex;
-        align-items: center;
-        @include FontSetting(12px,$grey ,400 );
+  }
+
+  .nav-text {
+    cursor: pointer;
+    position: absolute;
+    left: 40px;
+
+    &:hover {
+      color: #1DA1F2;
     }
+
+    .active {
+      color: #1DA1F2;
+    }
+  }
+
+  .tweet-btn {
+    @include TweetBtn(100%, 50px);
+  }
 }
-.profile-picture{
+
+.home {
+  width: 100%;
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+}
+
+.top-section {
+  padding: 15px 16px;
+  @include FontSetting(20px, $black, 700);
+}
+
+.comment-container {
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  min-height: 120px;
+
+  position: relative;
+
+  .input-area {
+    display: flex;
+    margin-top: 4px;
+    margin-left: 16px;
+    position: absolute;
+    width: 90%;
+
+    img {
+      margin-right: 12px;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      @include FontSetting(20px, $grey, 400);
+      width: 100%;
+    }
+  }
+
+  .comment-btn {
+    @include TweetBtn(79px, 36px);
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+
+  }
+}
+
+.comment {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 16px;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+
+  img {
     height: 50px;
     width: 50px;
-    border-radius: 50%;
+  }
 }
-.rightBar{
-    padding: 10px 20px 0 30px;
-    width: 350px;
-    .trends{
-        background-color: #F5F8FA;
-        border-radius: 15px;
-    }
-}
-.search{
-    width: 100%;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #E6ECF0;
-    background-image: url("../images/icons/search.png");
-    background-repeat: no-repeat;
-    background-position: 18px 11px;
-    border: none;
-    outline: none;
-    @include FontSetting(15px,$grey ,400 );
-    box-sizing: border-box;
-    padding: 11px 10px 11px 50px;
-    &:focus{
-        outline: 1px solid #1DA1F2;
-    }
-}
-.trends{
-    margin-top: 12px;
-    box-sizing: border-box;
-    overflow: hidden;
-    h5{
-        padding: 12px 16px;
-        @include FontSetting(19px,$black ,700);
-    }
-    p{
-        padding: 12px 16px;
-        cursor: pointer;
-        @include FontSetting(13px,$grey,400);
-        .hashtag{
-            display: inline-block;
-            margin: 4px 0;
-            @include FontSetting(15px,$black ,700);
-        }
-        &:hover{
-            background-color: #EFF1F1;
-        }
-    }
-}
-.users{
-    margin-top: 12px;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: #F5F8FA;
-    border-radius: 15px;
-    h5{
-        padding: 12px 16px;
-        @include FontSetting(19px,$black ,700);
-    }
-}
-.user{
-        padding: 12px 16px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        position: relative;
 
-        p{
-            margin-left: 20px;
-        }
-        &:hover{
-            background-color: #EFF1F1;
-        }
-        .follow-btn{
-            position: absolute;
-            right: 20px;
-        }
+.comment-value {
+  margin-left: 12px;
+  width: 100%;
 }
-.follow-btn{
-    width: 80px;
-    height: 37px;
-    border-radius: 25px;
+
+.comment-info {
+  display: flex;
+  align-items: flex-end;
+
+  .user-id {
+    margin-left: 10px;
+  }
+}
+
+.user-name {
+  @include FontSetting($black, 15px, 700);
+  line-height: 15px
+}
+
+.user-id {
+  @include FontSetting(15px, $grey, 300);
+}
+
+.comment-text {
+  @include FontSetting(#141619, 15px, 400);
+  line-height: 18px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  width: 90%;
+  overflow-wrap: anywhere;
+}
+
+.comment-actions {
+  width: 400px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
     cursor: pointer;
-    border: none;
+  }
+
+  li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: $black;
-    @include FontSetting(14px, white ,700);
+    @include FontSetting(12px, $grey, 400);
+  }
 }
-.explore{
-    .trends{
-        border-bottom: 1px solid $border-color;
+
+.profile-picture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.rightBar {
+  padding: 10px 20px 0 30px;
+  width: 350px;
+
+  .trends {
+    background-color: #F5F8FA;
+    border-radius: 15px;
+  }
+}
+
+.search {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #E6ECF0;
+  background-image: url("../images/icons/search.png");
+  background-repeat: no-repeat;
+  background-position: 18px 11px;
+  border: none;
+  outline: none;
+  @include FontSetting(15px, $grey, 400);
+  box-sizing: border-box;
+  padding: 11px 10px 11px 50px;
+
+  &:focus {
+    outline: 1px solid #1DA1F2;
+  }
+}
+
+.trends {
+  margin-top: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  h5 {
+    padding: 12px 16px;
+    @include FontSetting(19px, $black, 700);
+  }
+
+  p {
+    padding: 12px 16px;
+    cursor: pointer;
+    @include FontSetting(13px, $grey, 400);
+
+    .hashtag {
+      display: inline-block;
+      margin: 4px 0;
+      @include FontSetting(15px, $black, 700);
     }
+
+    &:hover {
+      background-color: #EFF1F1;
+    }
+  }
 }
 
-.bookmarks{
+.users {
+  margin-top: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #F5F8FA;
+  border-radius: 15px;
+
+  h5 {
+    padding: 12px 16px;
+    @include FontSetting(19px, $black, 700);
+  }
+}
+
+.user {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  p {
+    margin-left: 20px;
+  }
+
+  &:hover {
+    background-color: #EFF1F1;
+  }
+
+  .follow-btn {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.follow-btn {
+  width: 80px;
+  height: 37px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black;
+  @include FontSetting(14px, white, 700);
+}
+
+.explore {
+  .trends {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.bookmarks {
 
 }
+
 @media screen and (max-width: 300px) {
-    header{
-        width: 50px;
-        li{
-            span{
-                font-size: 0 !important;
-            }
-        }
+  header {
+    width: 50px;
 
+    li {
+      span {
+        font-size: 0 !important;
+      }
     }
-    .tweet-btn{
-        display: none;
-    }
-    
+
+  }
+  .tweet-btn {
+    display: none;
+  }
+
 }

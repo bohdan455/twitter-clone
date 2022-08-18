@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import {TweetsContext} from "./TweetsContext";
 import CommentsBlock from "./CommentsBlock";
 import ProfilePhoto from "../images/profile-logo.jpg";
 import Stars from "../images/icons/stars.png";
 
 
-const Home = ({tweetsList, setTweetsList}) => {
+const Home = () => {
     const [tweetText, setTweetText] = useState();
-
+    const [tweetsList ,setTweetsList] = useContext(TweetsContext);
     function PostTweet(event){
         event.preventDefault();
         if(tweetText){
