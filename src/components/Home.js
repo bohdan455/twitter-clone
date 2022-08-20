@@ -6,12 +6,12 @@ import Stars from "../images/icons/stars.png";
 
 
 const Home = () => {
-    const [tweetText, setTweetText] = useState();
+    const [tweetText, setTweetText] = useState('');
     const [tweetsList ,setTweetsList] = useContext(TweetsContext);
     function PostTweet(event){
         event.preventDefault();
         if(tweetText){
-            setTweetsList(previousValue => [...previousValue,tweetText]);
+            setTweetsList(previousValue => [...previousValue,{text: tweetText, likes: []}]);
             setTweetText('')
             console.log("tweet added");
 
@@ -39,7 +39,7 @@ const Home = () => {
                     <input type="submit" className="comment-btn" value="Tweet"/>
                 </form>
             </div>
-            <CommentsBlock tweetsList = {tweetsList} />
+            <CommentsBlock tweetsList = {tweetsList} showButtons/>
         </div>
      );
 }

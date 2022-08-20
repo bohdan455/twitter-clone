@@ -10,8 +10,8 @@ const Bookmarks = () => {
                 Bookmarks
                 <div className="user-id">@lol</div>
             </div>
-            {tweetsList.reverse().map(item =>(
-                <Comment text = {item} />
+            {tweetsList.filter(tweet => tweet.likes > 0).map(item =>(
+                <Comment text = {item.text} />
 
             ))}
         </div>

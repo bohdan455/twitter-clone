@@ -1,8 +1,8 @@
-const Search = () => {
+const Search = ({searchHandler, searchValue,setSearchValue}) => {
     return ( 
-        <div className="search-box">
-            <input type="text" className="search" placeholder="Search Twitter"/>
-        </div>
+        <form className="search-box" onSubmit={searchHandler}>
+            <input type="text" className="search" placeholder="Search Twitter" value={searchValue} onChange = {(e) => setSearchValue(e.target.value)}/>
+        </form>
      );
 }
  
