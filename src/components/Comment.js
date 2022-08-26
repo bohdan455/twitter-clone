@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { TweetsContext } from "./TweetsContext";
-const Comment = ({ text, id, likes, showButtons }) => {
+const Comment = ({ text, id, likes, showButtons,name }) => {
   const [tweetsList, setTweetsList] = useContext(TweetsContext);
 
   const likeHandler = (e) => {
     let tweets = [...tweetsList];
-    if(tweets[id].likes.indexOf('lol') === -1){
-      tweets[id].likes.push('lol')
+    if(tweets[id].likes.indexOf(name) === -1){
+      tweets[id].likes.push(name)
     }
     else{
-      tweets[id].likes = tweets[id].likes.filter(tweet => tweet !== "lol")
+      tweets[id].likes = tweets[id].likes.filter(tweet => tweet !== name)
     }
     setTweetsList(() => {
       return tweets;
@@ -25,8 +25,8 @@ const Comment = ({ text, id, likes, showButtons }) => {
       />
       <div className="comment-value">
         <div className="comment-info">
-          <span className="user-name">Lol</span>
-          <span className="user-id">@lol · 5m</span>
+          <span className="user-name">{name}</span>
+          <span className="user-id">@{name} · 5m</span>
         </div>
         <div className="comment-text">{text}</div>
         {showButtons && (

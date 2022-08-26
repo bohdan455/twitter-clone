@@ -1,6 +1,4 @@
-import {createContext} from "react";
-import {useState} from "react";
-
+import {createContext,useState} from "react";
 
 export const TweetsContext = createContext();
 

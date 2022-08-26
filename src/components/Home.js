@@ -3,15 +3,17 @@ import {TweetsContext} from "./TweetsContext";
 import CommentsBlock from "./CommentsBlock";
 import ProfilePhoto from "../images/profile-logo.jpg";
 import Stars from "../images/icons/stars.png";
+import { AccountContext } from "./AccountContext";
 
 
 const Home = () => {
     const [tweetText, setTweetText] = useState('');
     const [tweetsList ,setTweetsList] = useContext(TweetsContext);
+    const [account,] = useContext(AccountContext);
     function PostTweet(event){
         event.preventDefault();
         if(tweetText){
-            setTweetsList(previousValue => [...previousValue,{text: tweetText, likes: []}]);
+            setTweetsList(previousValue => [...previousValue,{text: tweetText, name: account.name ,likes: []}]);
             setTweetText('')
             console.log("tweet added");
 

@@ -4,7 +4,7 @@ const CommentsBlock = ({tweetsList, showButtons}) => {
     return ( 
         <div className="comments-block">
             {tweetsList.map(item =>(
-                <Comment key = {id++} id = {id} text={item.text} likes = {item.likes} showButtons = {showButtons}/>
+                <Comment key = {id++} id = {id} {...item} showButtons = {showButtons}/>
             )).reverse()}
         </div>
      );

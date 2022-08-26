@@ -27,10 +27,11 @@ $border-color: #E6ECF0;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
-.app {
-  width: 1200px;
+.page {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   padding: 0 20px;
@@ -38,7 +39,7 @@ $border-color: #E6ECF0;
 }
 
 .content {
-  width: 600px;
+  width: 50%;
   border-right: 1px solid $border-color;
   border-left: 1px solid $border-color;
   padding-top: 15px;
@@ -46,7 +47,7 @@ $border-color: #E6ECF0;
 
 header {
   padding-top: 15px;
-  width: 250px;
+  width: 25%;
   height: 100%;
 
   ul {
@@ -98,7 +99,9 @@ header {
   padding: 15px 16px;
   @include FontSetting(20px, $black, 700);
 }
-
+.comments-block{
+  overflow-x: hidden;
+}
 .comment-container {
   width: 100%;
   border-bottom: 1px solid $border-color;
@@ -180,7 +183,7 @@ header {
 }
 
 .comment-actions {
-  width: 400px;
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -313,15 +316,50 @@ header {
     border-bottom: 1px solid $border-color;
   }
 }
+.login{
+  background-color: #1DA1F2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include FontSetting(30px,white ,700);
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  input{
+    margin: 10px;
+    padding: 5px;
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    @include FontSetting(15px,black ,400);
+  }
+  .login-content-submit{
+    background-color: royalblue;
+    cursor: pointer;
+    @include FontSetting(15px,white ,400);
+  }
+  .login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.bookmarks {
-
+  }
 }
-
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 950px){
+  .rightBar{
+    display: none;
+  }
+  .content{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 800px) {
   header {
     width: 50px;
-
     li {
       span {
         font-size: 0 !important;
@@ -329,8 +367,10 @@ header {
     }
 
   }
+  .content{
+    width: 80%;
+  }
   .tweet-btn {
     display: none;
   }
-
 }

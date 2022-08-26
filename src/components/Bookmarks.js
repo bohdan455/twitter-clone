@@ -1,19 +1,18 @@
 import {useContext} from "react";
 import {TweetsContext} from "./TweetsContext";
-import Comment from "./Comment";
+import CommentsBlock from "./CommentsBlock";
+import { AccountContext } from "./AccountContext";
 
 const Bookmarks = () => {
     const [tweetsList] = useContext(TweetsContext);
+    const [account,] = useContext(AccountContext)
     return ( 
         <div className="bookmarks">
             <div className="top-section">
                 Bookmarks
-                <div className="user-id">@lol</div>
+                <div className="user-id">@{account.name}</div>
             </div>
-            {tweetsList.filter(tweet => tweet.likes > 0).map(item =>(
-                <Comment text = {item.text} />
-
-            ))}
+            <CommentsBlock tweetsList = {tweetsList.filter(item => item.likes.length > 0)}/>
         </div>
      );
 }
